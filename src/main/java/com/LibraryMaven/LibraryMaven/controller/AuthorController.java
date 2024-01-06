@@ -35,6 +35,7 @@ public class AuthorController {
     @GetMapping("getAuthors/{authors}")
     public List<Author> getAuthor(@PathVariable("authors") String author)
     {
+
         return authorService.getByAuthors(author);
     }
 

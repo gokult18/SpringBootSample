@@ -13,11 +13,12 @@ public class AuthorSevice {
             return authorRepository.findAll();
         }
         public List<Author> getByAuthor(List<Integer> author_Id) {
-                List<Integer> auhtor=author_Id;
-            return authorRepository.findAllById(auhtor);
+                List<Integer> author=author_Id;
+            return authorRepository.findAllById(author);
         }
 
     public List<Author> getByAuthors(String authors) {
-        return authorRepository.findByCategory(authors);
+
+            return authorRepository.findByCategory(authors);
     }
 }
