@@ -18,4 +18,13 @@ public class Book {
     public Book(String book) {
      this.name=book;
     }
+    public String GetName ()
+    {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name=name;
+    }
+
 }
