@@ -1,0 +1,10 @@
+type Query{
+    getBook : [Book]
+}
+type Mutation{
+    addBook(name:String):Book
+}
+type Book{
+    name:String!
+    memberId: ID
+}
