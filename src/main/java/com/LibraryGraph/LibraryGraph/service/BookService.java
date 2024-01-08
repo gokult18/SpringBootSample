@@ -2,8 +2,6 @@ package com.LibraryGraph.LibraryGraph.service;
 
 import com.LibraryGraph.LibraryGraph.model.Book;
 import com.LibraryGraph.LibraryGraph.repository.BookRepository;
-import org.springframework.graphql.data.method.annotation.Argument;
-import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -28,8 +26,11 @@ public class BookService {
         Book save = bookrepository.save(books);
         return save;
     }
-
-    public Book  getById(@Argument Integer id )
+    public List<Book> getByLimit(Integer number)
+    {
+        return bookrepository.getByLimit(number);
+    }
+    public Book  getById( Integer id )
     {
         Book book= bookrepository.findById(id)
                 .orElseThrow(()->new RuntimeException("No Book with that Id"));

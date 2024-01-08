@@ -1,6 +1,7 @@
 type Query{
     getBook : [Book]
     getById(id:ID!): Book
+    getByLimit(number:Int):[Book]
 }
 type Mutation{
     addBook(name:String!):Book!

@@ -16,21 +16,28 @@ public class BookController {
    private BookService bookService;
 
     public BookController(BookService bookService) {
+
         this.bookService = bookService;
     }
     @QueryMapping
     public List<Book> getBook(){
+
         return bookService.getBooks();
     }
     @QueryMapping
     public Book getById(@Argument Integer id){
+
         return bookService.getById(id);
     }
     @MutationMapping
     public Book addBook(@Argument String name)
     {
         return bookService.putBook(name);
-
+    }
+    @QueryMapping
+    public List<Book> getByLimit(@Argument Integer number)
+    {
+        return bookService.getByLimit(number);
     }
     @MutationMapping
     public  Book updateBook(@Argument Integer id ,@Argument String name)
